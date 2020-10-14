@@ -1,0 +1,14 @@
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
