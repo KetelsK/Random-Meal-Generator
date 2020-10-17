@@ -12,7 +12,7 @@ export class MainComponent implements OnInit {
   meal: Meal;
   isLoading: boolean = true;
   safeUrl: SafeResourceUrl;
-
+  
   constructor(
     private mealService: RandomMealService,
     private sanitizer: DomSanitizer

@@ -12,3 +12,9 @@
   color: white;
   text-decoration: none;
 }
+
+@media screen and (max-width: 576px) {
+  .app-title {
+    font-size: 1.6rem !important;
+  }
+}

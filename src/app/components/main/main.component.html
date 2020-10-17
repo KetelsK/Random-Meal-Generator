@@ -1,9 +1,25 @@
 <div>
-  <div class="d-flex flex-column align-items-center mb-4">
-    <h1>Feeling hungry ?</h1>
-    <button class="btn btn-primary" (click)="getRandomMeal()">
+  <div
+    [ngClass]="isLoading ? 'hungry__container' : 'padding-top'"
+    class="d-flex flex-column align-items-center mb-4"
+  >
+    <h2>Feeling hungry ?</h2>
+    <button class="btn btn-primary mt-4 mb-4" (click)="getRandomMeal()">
       Get meal 🍔
     </button>
+
+    <div class="emoji__container" *ngIf="isLoading">
+      <div>🦞</div>
+      <div>🥗</div>
+      <div>🥕</div>
+      <div>🍪</div>
+      <div>🧀</div>
+      <div>🥩</div>
+      <div>🧁</div>
+      <div>🥐</div>
+      <div>🍟</div>
+      <div>🍩</div>
+    </div>
   </div>
 
   <div class="row main__container" *ngIf="!isLoading">
@@ -20,6 +36,7 @@
     </div>
     <!-- Recipe -->
     <div class="col-12 col-md-7 recipe__container">
+      <h2>{{ meal.title }}</h2>
       <span>{{ meal.recipe }}</span>
     </div>
   </div>
