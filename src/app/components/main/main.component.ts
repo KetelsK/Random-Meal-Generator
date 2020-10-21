@@ -67,5 +67,9 @@ export class MainComponent implements OnInit {
     }
     this.meal.ingredients = ingredients;
     this.isLoading = false;
+    setTimeout(() => {
+      const target = document.getElementById('target');
+      target.scrollIntoView({ behavior: 'smooth' });
+    }, 1);
   }
 }
