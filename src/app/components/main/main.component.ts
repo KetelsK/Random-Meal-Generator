@@ -31,8 +31,6 @@ export class MainComponent implements OnInit {
   GetMealByCategory(category: string) {
     this.mealService.getMealByCategory(category).subscribe((meal) => {
       let randomNumber = Math.floor(Math.random() * meal.meals.length);
-      console.log(randomNumber);
-      console.log(meal.meals[randomNumber]);
       this.mealService
         .getMealDetails(meal.meals[randomNumber].idMeal)
         .subscribe((mealDetails) => {

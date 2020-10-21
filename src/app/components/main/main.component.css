@@ -31,7 +31,7 @@
   opacity: 0.5;
 }
 
-.emoji__container div label {
+.emoji__container div span {
   font-size: 1.3rem;
   margin-right: 0.25rem;
   cursor: pointer;
