@@ -12,7 +12,7 @@ export class MainComponent implements OnInit {
   meal: Meal;
   isLoading: boolean = true;
   safeUrl: SafeResourceUrl;
-  
+
   constructor(
     private mealService: RandomMealService,
     private sanitizer: DomSanitizer
@@ -25,6 +25,19 @@ export class MainComponent implements OnInit {
   getRandomMeal() {
     this.mealService.getRandomMeal().subscribe((meal) => {
       this.createMeal(meal.meals[0]);
+    });
+  }
+
+  GetMealByCategory(category: string) {
+    this.mealService.getMealByCategory(category).subscribe((meal) => {
+      let randomNumber = Math.floor(Math.random() * meal.meals.length);
+      console.log(randomNumber);
+      console.log(meal.meals[randomNumber]);
+      this.mealService
+        .getMealDetails(meal.meals[randomNumber].idMeal)
+        .subscribe((mealDetails) => {
+          this.createMeal(mealDetails.meals[0]);
+        });
     });
   }
 

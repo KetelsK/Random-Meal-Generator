@@ -5,20 +5,26 @@
   >
     <h2>Feeling hungry ?</h2>
     <button class="btn btn-primary mt-4 mb-4" (click)="getRandomMeal()">
-      Get meal 🍔
+      Get a random meal 🍔
     </button>
-
-    <div class="emoji__container" *ngIf="isLoading">
-      <div>🦞</div>
-      <div>🥗</div>
-      <div>🥕</div>
-      <div>🍪</div>
-      <div>🧀</div>
-      <div>🥩</div>
-      <div>🧁</div>
-      <div>🥐</div>
-      <div>🍟</div>
-      <div>🍩</div>
+    <h4 class="mb-3">Or choose a category :</h4>
+    <div class="emoji__container">
+      <div (click)="GetMealByCategory('Starter')"><label>Starter</label>🥚</div>
+      <div (click)="GetMealByCategory('Seafood')"><label>Seafood</label>🐟</div>
+      <div (click)="GetMealByCategory('Meat')"><label>Meat</label>🥩</div>
+      <div (click)="GetMealByCategory('Pasta')"><label>Pasta</label>🍝</div>
+      <div (click)="GetMealByCategory('Vegetarian')">
+        <label>Vegetarian</label>🥗
+      </div>
+      <div (click)="GetMealByCategory('Vegan')"><label>Vegan</label>🥦</div>
+      <div (click)="GetMealByCategory('Side')"><label>Side dish</label>🍟</div>
+      <div (click)="GetMealByCategory('Dessert')"><label>Dessert</label>🧁</div>
+      <div (click)="GetMealByCategory('Breakfast')">
+        <label>Breakfast</label>🥐
+      </div>
+      <div (click)="GetMealByCategory('Miscellaneous')">
+        <label>Other</label>🌮
+      </div>
     </div>
   </div>
 
